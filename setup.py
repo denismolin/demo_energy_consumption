@@ -10,7 +10,11 @@ with open('README.rst') as readme_file:
 with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
-requirements = ['Click>=7.0', ]
+requirements = ['Click>=7.0', 'docker>=5',
+				'greenlet>=1',  'pycryptodome>=3', 
+				'sqlalchemy>=1.4', 'teradataml>=17',
+				'teradatasql>=17', 'teradatasqlalchemy>=17',
+				'websocket-client>=1.2']
 
 test_requirements = ['pytest>=3', ]
 

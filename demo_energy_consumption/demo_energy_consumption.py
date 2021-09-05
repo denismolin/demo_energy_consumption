@@ -1,7 +1,9 @@
 """Main module."""
 import teradataml as tdml
 
+from .query_execution import execute_query
 
+@execute_query
 def getmydata(dimensions=['region', 'profil', 'plage_de_puissance_souscrite'],
               kpis={'sum': ['total_energie_soutiree_wh'], 'avg': [
                   'courbe_moyenne_num1_num2_Wh'], 'min': [], 'max': []},

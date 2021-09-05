@@ -12,3 +12,7 @@ __version__ = '0.1.0'
 __author__ = """Denis Molin"""
 __email__ = 'denis.molin@teradata.com'
 __version__ = '0.1.0'
+
+from demo_energy_consumption.demo_energy_consumption import getmydata
+
+
