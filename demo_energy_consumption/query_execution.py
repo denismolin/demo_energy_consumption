@@ -8,20 +8,21 @@ import teradataml as tdml
 
 from functools import wraps
 
+
 def execute_query(func):
     @wraps(func)
     def wrapper(*args, **kwargs):
         query = func(*args, **kwargs)
-        
+
         con = tdml.get_connection()
-        
+
         if con:
             con.execute(query)
         else:
-            raise Exception("Sorry, There is no connection to a Vantage system. Please connect first")
-        
-        ##con.execute(query)
-        
-        return query
-    
+            raise Exception(
+                """Sorry, There is no connection to a Vantage system.
+                Please connect first""")
+
+        return tdml.DataFrame.from_query().to_pandas()
+
     return wrapper
