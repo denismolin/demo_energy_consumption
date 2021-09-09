@@ -23,6 +23,6 @@ def execute_query(func):
                 """Sorry, There is no connection to a Vantage system.
                 Please connect first""")
 
-        return tdml.DataFrame.from_query(query=query).to_pandas()
+        return tdml.DataFrame.from_query(query=query)
 
     return wrapper
